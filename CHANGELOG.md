@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file based on the [Keep a Changelog](http://keepachangelog.com/) Standard. This project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## [Unreleased](https://github.com/elastic/ecs/compare/0.1.0...master)
+## Unreleased
 
 ### Breaking changes
 * Change structure of URL. #7
@@ -31,8 +31,6 @@ All notable changes to this project will be documented in this file based on the
 * Remove the `user_agent` field set temporarily. #172
 * Rename `url.hostname` to `url.domain`. #175
 * Remove `source.hostname` and `destination.hostname`. #175
-
-### Bugfixes
 
 ### Added
 * Add `network.total.packets` and `network.total.bytes` field. PR#2
