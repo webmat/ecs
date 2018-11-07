@@ -55,3 +55,7 @@ All notable changes to this project will be documented in this file based on the
   `user_agent.os`.  #168
 
 ### Deprecated
+
+## 0.1.0
+
+Initial draft.
