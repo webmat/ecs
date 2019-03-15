@@ -6,6 +6,8 @@
 
 ### Added
 
+* Added field formats to all `.bytes` fields and `event.duration`. #385
+
 ### Improvements
 
 ### Deprecated
