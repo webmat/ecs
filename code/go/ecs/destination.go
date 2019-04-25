@@ -42,9 +42,10 @@ type Destination struct {
 	// Destination domain.
 	Domain string `ecs:"domain"`
 
+	// Locality of this side of the exchange.
 	// Locality can be either `private` or `public`. `private` indicates that
-	// the destination IP address is the ranges reserved for private networks
-	// as defined in `network.locality`. `public` indicates that the
+	// the destination IP address is in the ranges reserved for private
+	// networks, as defined in `network.locality`. `public` indicates that the
 	// destination IP is outside of the private ranges.
 	Locality string `ecs:"locality"`
 

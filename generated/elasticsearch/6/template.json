@@ -98,6 +98,10 @@
             "ip": {
               "type": "ip"
             }, 
+            "locality": {
+              "ignore_above": 1024, 
+              "type": "keyword"
+            }, 
             "mac": {
               "ignore_above": 1024, 
               "type": "keyword"
@@ -271,6 +275,10 @@
             }, 
             "ip": {
               "type": "ip"
+            }, 
+            "locality": {
+              "ignore_above": 1024, 
+              "type": "keyword"
             }, 
             "mac": {
               "ignore_above": 1024, 
@@ -749,6 +757,10 @@
               "ignore_above": 1024, 
               "type": "keyword"
             }, 
+            "locality": {
+              "ignore_above": 1024, 
+              "type": "keyword"
+            }, 
             "name": {
               "ignore_above": 1024, 
               "type": "keyword"
@@ -1002,6 +1014,10 @@
             "ip": {
               "type": "ip"
             }, 
+            "locality": {
+              "ignore_above": 1024, 
+              "type": "keyword"
+            }, 
             "mac": {
               "ignore_above": 1024, 
               "type": "keyword"
@@ -1128,6 +1144,10 @@
             }, 
             "ip": {
               "type": "ip"
+            }, 
+            "locality": {
+              "ignore_above": 1024, 
+              "type": "keyword"
             }, 
             "mac": {
               "ignore_above": 1024, 

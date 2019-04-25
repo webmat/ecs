@@ -53,8 +53,9 @@ type Server struct {
 	// Server domain.
 	Domain string `ecs:"domain"`
 
+	// Locality of this side of the exchange.
 	// Locality can be either `private` or `public`. `private` indicates that
-	// the server IP address is the ranges reserved for private networks as
+	// the server IP address is in the ranges reserved for private networks, as
 	// defined in `network.locality`. `public` indicates that the server IP is
 	// outside of the private ranges.
 	Locality string `ecs:"locality"`

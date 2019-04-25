@@ -93,9 +93,10 @@ type Network struct {
 	// `network.packets` is their sum.
 	Packets int64 `ecs:"packets"`
 
-	// Locality can be either `private` or `public`. `private` indicates that
+	// Locality of addresses involved in the exchange.
+	// Locality can be either "private" or "public". "private" indicates that
 	// both sides of the flow have IP addresses in the ranges reserved for
-	// private networks as defined below. `public` indicates that at least one
+	// private networks as defined below. "public" indicates that at least one
 	// side of the flow is outside of the private ranges. The IP addresses used
 	// in determining this field's value are `source.ip` and `destination.ip`.
 	// Address ranges that are considered private are * Loopback (127.0.0.0/8,

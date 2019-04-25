@@ -20,6 +20,7 @@ client.geo.name,keyword,extended,boston-dc,1.1.0-dev
 client.geo.region_iso_code,keyword,core,CA-QC,1.1.0-dev
 client.geo.region_name,keyword,core,Quebec,1.1.0-dev
 client.ip,ip,core,,1.1.0-dev
+client.locality,keyword,extended,public,1.1.0-dev
 client.mac,keyword,core,,1.1.0-dev
 client.packets,long,core,12,1.1.0-dev
 client.port,long,core,,1.1.0-dev
@@ -55,6 +56,7 @@ destination.geo.name,keyword,extended,boston-dc,1.1.0-dev
 destination.geo.region_iso_code,keyword,core,CA-QC,1.1.0-dev
 destination.geo.region_name,keyword,core,Quebec,1.1.0-dev
 destination.ip,ip,core,,1.1.0-dev
+destination.locality,keyword,extended,public,1.1.0-dev
 destination.mac,keyword,core,,1.1.0-dev
 destination.packets,long,core,12,1.1.0-dev
 destination.port,long,core,,1.1.0-dev
@@ -157,6 +159,7 @@ network.community_id,keyword,extended,1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=,1.1.0-dev
 network.direction,keyword,core,inbound,1.1.0-dev
 network.forwarded_ip,ip,core,192.1.1.2,1.1.0-dev
 network.iana_number,keyword,extended,6,1.1.0-dev
+network.locality,keyword,extended,public,1.1.0-dev
 network.name,keyword,extended,Guest Wifi,1.1.0-dev
 network.packets,long,core,24,1.1.0-dev
 network.protocol,keyword,core,http,1.1.0-dev
@@ -213,6 +216,7 @@ server.geo.name,keyword,extended,boston-dc,1.1.0-dev
 server.geo.region_iso_code,keyword,core,CA-QC,1.1.0-dev
 server.geo.region_name,keyword,core,Quebec,1.1.0-dev
 server.ip,ip,core,,1.1.0-dev
+server.locality,keyword,extended,public,1.1.0-dev
 server.mac,keyword,core,,1.1.0-dev
 server.packets,long,core,12,1.1.0-dev
 server.port,long,core,,1.1.0-dev
@@ -241,6 +245,7 @@ source.geo.name,keyword,extended,boston-dc,1.1.0-dev
 source.geo.region_iso_code,keyword,core,CA-QC,1.1.0-dev
 source.geo.region_name,keyword,core,Quebec,1.1.0-dev
 source.ip,ip,core,,1.1.0-dev
+source.locality,keyword,extended,public,1.1.0-dev
 source.mac,keyword,core,,1.1.0-dev
 source.packets,long,core,12,1.1.0-dev
 source.port,long,core,,1.1.0-dev

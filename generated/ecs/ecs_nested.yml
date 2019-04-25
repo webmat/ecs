@@ -191,7 +191,7 @@ client:
       format: bytes
       level: core
       name: bytes
-      order: 5
+      order: 6
       short: Bytes sent from the client to the server.
       type: long
     domain:
@@ -306,6 +306,21 @@ client:
       order: 1
       short: IP address of the client.
       type: ip
+    locality:
+      description: 'Locality of this side of the exchange.
+
+        Locality can be either `private` or `public`. `private` indicates that the
+        client IP address is in the ranges reserved for private networks, as defined
+        in `network.locality`. `public` indicates that the client IP is outside of
+        the private ranges.'
+      example: public
+      flat_name: client.locality
+      ignore_above: 1024
+      level: extended
+      name: locality
+      order: 5
+      short: Locality of this side of the exchange.
+      type: keyword
     mac:
       description: MAC address of the client.
       flat_name: client.mac
@@ -321,7 +336,7 @@ client:
       flat_name: client.packets
       level: core
       name: packets
-      order: 6
+      order: 7
       short: Packets sent from the client to the server.
       type: long
     port:
@@ -598,7 +613,7 @@ destination:
       format: bytes
       level: core
       name: bytes
-      order: 5
+      order: 6
       short: Bytes sent from the destination to the source.
       type: long
     domain:
@@ -713,6 +728,21 @@ destination:
       order: 1
       short: IP address of the destination.
       type: ip
+    locality:
+      description: 'Locality of this side of the exchange.
+
+        Locality can be either `private` or `public`. `private` indicates that the
+        destination IP address is in the ranges reserved for private networks, as
+        defined in `network.locality`. `public` indicates that the destination IP
+        is outside of the private ranges.'
+      example: public
+      flat_name: destination.locality
+      ignore_above: 1024
+      level: extended
+      name: locality
+      order: 5
+      short: Locality of this side of the exchange.
+      type: keyword
     mac:
       description: MAC address of the destination.
       flat_name: destination.mac
@@ -728,7 +758,7 @@ destination:
       flat_name: destination.packets
       level: core
       name: packets
-      order: 6
+      order: 7
       short: Packets sent from the destination to the source.
       type: long
     port:
@@ -1993,6 +2023,30 @@ network:
       order: 2
       short: IANA Protocol Number.
       type: keyword
+    locality:
+      description: 'Locality of addresses involved in the exchange.
+
+        Locality can be either "private" or "public". "private" indicates that both
+        sides of the flow have IP addresses in the ranges reserved for private networks
+        as defined below. "public" indicates that at least one side of the flow is
+        outside of the private ranges. The IP addresses used in determining this field''s
+        value are `source.ip` and `destination.ip`.
+
+        Address ranges that are considered private are * Loopback (127.0.0.0/8, ::1/128)
+        * Unspecified (0.0.0.0, ::) * IPv4 Broadcast (255.255.255.255) * RFC 1918
+        - IPv4 Local Unicast (10/8, 172.16/12, 192.168/16) * RFC 3927 - IPv4 Link-Local
+        Unicast (169.254.0.0/16) * RFC 5771 - IPv4 Local Multicast (224.0.0.0/4) *
+        RFC 4193 - IPv6 Local Unicast (fc00::/7) * RFC 4291 - IPv6 Link-Local Unicast
+        (fe80::/10) * RFC 4291 - IPv6 Link-Local Multicast (ff02::/8) * RFC 4291 -
+        IPv6 Interface Local Multicast (ff01::/8)'
+      example: public
+      flat_name: network.locality
+      ignore_above: 1024
+      level: extended
+      name: locality
+      order: 11
+      short: Locality of addresses involved in the exchange.
+      type: keyword
     name:
       description: Name given by operators to sections of their network.
       example: Guest Wifi
@@ -2589,7 +2643,7 @@ server:
       format: bytes
       level: core
       name: bytes
-      order: 5
+      order: 6
       short: Bytes sent from the server to the client.
       type: long
     domain:
@@ -2704,6 +2758,21 @@ server:
       order: 1
       short: IP address of the server.
       type: ip
+    locality:
+      description: 'Locality of this side of the exchange.
+
+        Locality can be either `private` or `public`. `private` indicates that the
+        server IP address is in the ranges reserved for private networks, as defined
+        in `network.locality`. `public` indicates that the server IP is outside of
+        the private ranges.'
+      example: public
+      flat_name: server.locality
+      ignore_above: 1024
+      level: extended
+      name: locality
+      order: 5
+      short: Locality of this side of the exchange.
+      type: keyword
     mac:
       description: MAC address of the server.
       flat_name: server.mac
@@ -2719,7 +2788,7 @@ server:
       flat_name: server.packets
       level: core
       name: packets
-      order: 6
+      order: 7
       short: Packets sent from the server to the client.
       type: long
     port:
@@ -2939,7 +3008,7 @@ source:
       format: bytes
       level: core
       name: bytes
-      order: 5
+      order: 6
       short: Bytes sent from the source to the destination.
       type: long
     domain:
@@ -3054,6 +3123,21 @@ source:
       order: 1
       short: IP address of the source.
       type: ip
+    locality:
+      description: 'Locality of this side of the exchange.
+
+        Locality can be either `private` or `public`. `private` indicates that the
+        source IP address is in the ranges reserved for private networks, as defined
+        in `network.locality`. `public` indicates that the source IP is outside of
+        the private ranges.'
+      example: public
+      flat_name: source.locality
+      ignore_above: 1024
+      level: extended
+      name: locality
+      order: 5
+      short: Locality of this side of the exchange.
+      type: keyword
     mac:
       description: MAC address of the source.
       flat_name: source.mac
@@ -3069,7 +3153,7 @@ source:
       flat_name: source.packets
       level: core
       name: packets
-      order: 6
+      order: 7
       short: Packets sent from the source to the destination.
       type: long
     port:
