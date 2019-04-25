@@ -54,9 +54,9 @@ type Client struct {
 	Domain string `ecs:"domain"`
 
 	// Locality of this side of the exchange.
-	// Locality can be either `private` or `public`. `private` indicates that
+	// Locality can be either "private" or "public". "private" indicates that
 	// the client IP address is in the ranges reserved for private networks, as
-	// defined in `network.locality`. `public` indicates that the client IP is
+	// defined in `network.locality`. "public" indicates that the client IP is
 	// outside of the private ranges.
 	Locality string `ecs:"locality"`
 
