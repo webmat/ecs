@@ -6,6 +6,11 @@ All notable changes to this project will be documented in this file based on the
 
 ## [1.0.2](https://github.com/elastic/ecs/compare/v1.0.1...v1.0.2)
 
+### Bugfixes
+
+* Fix typo in process fieldset definition that prevented the example value for
+  `process.pid` from being picked up. #464
+
 ### Improvements
 
 * Format port numbers and numeric IDs as strings. #454
