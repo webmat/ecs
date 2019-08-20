@@ -29,6 +29,22 @@ client.nat.ip,ip,extended,,1.1.0-dev
 client.nat.port,long,extended,,1.1.0-dev
 client.packets,long,core,12,1.1.0-dev
 client.port,long,core,,1.1.0-dev
+client.process.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",1.1.0-dev
+client.process.executable,keyword,extended,/usr/bin/ssh,1.1.0-dev
+client.process.hash.md5,keyword,extended,,1.1.0-dev
+client.process.hash.sha1,keyword,extended,,1.1.0-dev
+client.process.hash.sha256,keyword,extended,,1.1.0-dev
+client.process.hash.sha512,keyword,extended,,1.1.0-dev
+client.process.name,keyword,extended,ssh,1.1.0-dev
+client.process.pgid,long,extended,,1.1.0-dev
+client.process.pid,long,core,4242,1.1.0-dev
+client.process.ppid,long,extended,4241,1.1.0-dev
+client.process.start,date,extended,2016-05-23T08:05:34.853Z,1.1.0-dev
+client.process.thread.id,long,extended,4242,1.1.0-dev
+client.process.thread.name,keyword,extended,thread-0,1.1.0-dev
+client.process.title,keyword,extended,,1.1.0-dev
+client.process.uptime,long,extended,1325,1.1.0-dev
+client.process.working_directory,keyword,extended,/home/alice,1.1.0-dev
 client.user.domain,keyword,extended,,1.1.0-dev
 client.user.email,keyword,extended,,1.1.0-dev
 client.user.full_name,keyword,extended,Albert Einstein,1.1.0-dev
@@ -69,6 +85,22 @@ destination.nat.ip,ip,extended,,1.1.0-dev
 destination.nat.port,long,extended,,1.1.0-dev
 destination.packets,long,core,12,1.1.0-dev
 destination.port,long,core,,1.1.0-dev
+destination.process.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",1.1.0-dev
+destination.process.executable,keyword,extended,/usr/bin/ssh,1.1.0-dev
+destination.process.hash.md5,keyword,extended,,1.1.0-dev
+destination.process.hash.sha1,keyword,extended,,1.1.0-dev
+destination.process.hash.sha256,keyword,extended,,1.1.0-dev
+destination.process.hash.sha512,keyword,extended,,1.1.0-dev
+destination.process.name,keyword,extended,ssh,1.1.0-dev
+destination.process.pgid,long,extended,,1.1.0-dev
+destination.process.pid,long,core,4242,1.1.0-dev
+destination.process.ppid,long,extended,4241,1.1.0-dev
+destination.process.start,date,extended,2016-05-23T08:05:34.853Z,1.1.0-dev
+destination.process.thread.id,long,extended,4242,1.1.0-dev
+destination.process.thread.name,keyword,extended,thread-0,1.1.0-dev
+destination.process.title,keyword,extended,,1.1.0-dev
+destination.process.uptime,long,extended,1325,1.1.0-dev
+destination.process.working_directory,keyword,extended,/home/alice,1.1.0-dev
 destination.user.domain,keyword,extended,,1.1.0-dev
 destination.user.email,keyword,extended,,1.1.0-dev
 destination.user.full_name,keyword,extended,Albert Einstein,1.1.0-dev
@@ -257,6 +289,22 @@ server.nat.ip,ip,extended,,1.1.0-dev
 server.nat.port,long,extended,,1.1.0-dev
 server.packets,long,core,12,1.1.0-dev
 server.port,long,core,,1.1.0-dev
+server.process.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",1.1.0-dev
+server.process.executable,keyword,extended,/usr/bin/ssh,1.1.0-dev
+server.process.hash.md5,keyword,extended,,1.1.0-dev
+server.process.hash.sha1,keyword,extended,,1.1.0-dev
+server.process.hash.sha256,keyword,extended,,1.1.0-dev
+server.process.hash.sha512,keyword,extended,,1.1.0-dev
+server.process.name,keyword,extended,ssh,1.1.0-dev
+server.process.pgid,long,extended,,1.1.0-dev
+server.process.pid,long,core,4242,1.1.0-dev
+server.process.ppid,long,extended,4241,1.1.0-dev
+server.process.start,date,extended,2016-05-23T08:05:34.853Z,1.1.0-dev
+server.process.thread.id,long,extended,4242,1.1.0-dev
+server.process.thread.name,keyword,extended,thread-0,1.1.0-dev
+server.process.title,keyword,extended,,1.1.0-dev
+server.process.uptime,long,extended,1325,1.1.0-dev
+server.process.working_directory,keyword,extended,/home/alice,1.1.0-dev
 server.user.domain,keyword,extended,,1.1.0-dev
 server.user.email,keyword,extended,,1.1.0-dev
 server.user.full_name,keyword,extended,Albert Einstein,1.1.0-dev
@@ -290,6 +338,22 @@ source.nat.ip,ip,extended,,1.1.0-dev
 source.nat.port,long,extended,,1.1.0-dev
 source.packets,long,core,12,1.1.0-dev
 source.port,long,core,,1.1.0-dev
+source.process.args,keyword,extended,"['ssh', '-l', 'user', '10.0.0.16']",1.1.0-dev
+source.process.executable,keyword,extended,/usr/bin/ssh,1.1.0-dev
+source.process.hash.md5,keyword,extended,,1.1.0-dev
+source.process.hash.sha1,keyword,extended,,1.1.0-dev
+source.process.hash.sha256,keyword,extended,,1.1.0-dev
+source.process.hash.sha512,keyword,extended,,1.1.0-dev
+source.process.name,keyword,extended,ssh,1.1.0-dev
+source.process.pgid,long,extended,,1.1.0-dev
+source.process.pid,long,core,4242,1.1.0-dev
+source.process.ppid,long,extended,4241,1.1.0-dev
+source.process.start,date,extended,2016-05-23T08:05:34.853Z,1.1.0-dev
+source.process.thread.id,long,extended,4242,1.1.0-dev
+source.process.thread.name,keyword,extended,thread-0,1.1.0-dev
+source.process.title,keyword,extended,,1.1.0-dev
+source.process.uptime,long,extended,1325,1.1.0-dev
+source.process.working_directory,keyword,extended,/home/alice,1.1.0-dev
 source.user.domain,keyword,extended,,1.1.0-dev
 source.user.email,keyword,extended,,1.1.0-dev
 source.user.full_name,keyword,extended,Albert Einstein,1.1.0-dev

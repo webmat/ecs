@@ -310,6 +310,185 @@ client.port:
   order: 2
   short: Port of the client.
   type: long
+client.process.args:
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example: &id001
+  - ssh
+  - -l
+  - user
+  - 10.0.0.16
+  flat_name: client.process.args
+  ignore_above: 1024
+  level: extended
+  name: args
+  order: 4
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+client.process.executable:
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: client.process.executable
+  ignore_above: 1024
+  level: extended
+  name: executable
+  order: 5
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+client.process.hash.md5:
+  description: MD5 hash.
+  flat_name: client.process.hash.md5
+  ignore_above: 1024
+  level: extended
+  name: md5
+  order: 0
+  original_fieldset: process
+  short: MD5 hash.
+  type: keyword
+client.process.hash.sha1:
+  description: SHA1 hash.
+  flat_name: client.process.hash.sha1
+  ignore_above: 1024
+  level: extended
+  name: sha1
+  order: 1
+  original_fieldset: process
+  short: SHA1 hash.
+  type: keyword
+client.process.hash.sha256:
+  description: SHA256 hash.
+  flat_name: client.process.hash.sha256
+  ignore_above: 1024
+  level: extended
+  name: sha256
+  order: 2
+  original_fieldset: process
+  short: SHA256 hash.
+  type: keyword
+client.process.hash.sha512:
+  description: SHA512 hash.
+  flat_name: client.process.hash.sha512
+  ignore_above: 1024
+  level: extended
+  name: sha512
+  order: 3
+  original_fieldset: process
+  short: SHA512 hash.
+  type: keyword
+client.process.name:
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: client.process.name
+  ignore_above: 1024
+  level: extended
+  name: name
+  order: 1
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+client.process.pgid:
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: client.process.pgid
+  format: string
+  level: extended
+  name: pgid
+  order: 3
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+client.process.pid:
+  description: Process id.
+  example: 4242
+  flat_name: client.process.pid
+  format: string
+  level: core
+  name: pid
+  order: 0
+  original_fieldset: process
+  short: Process id.
+  type: long
+client.process.ppid:
+  description: Parent process' pid.
+  example: 4241
+  flat_name: client.process.ppid
+  format: string
+  level: extended
+  name: ppid
+  order: 2
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+client.process.start:
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: client.process.start
+  level: extended
+  name: start
+  order: 9
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+client.process.thread.id:
+  description: Thread ID.
+  example: 4242
+  flat_name: client.process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 7
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+client.process.thread.name:
+  description: Thread name.
+  example: thread-0
+  flat_name: client.process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 8
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+client.process.title:
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: client.process.title
+  ignore_above: 1024
+  level: extended
+  name: title
+  order: 6
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+client.process.uptime:
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: client.process.uptime
+  level: extended
+  name: uptime
+  order: 10
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+client.process.working_directory:
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: client.process.working_directory
+  ignore_above: 1024
+  level: extended
+  name: working_directory
+  order: 11
+  original_fieldset: process
+  short: The working directory of the process.
+  type: keyword
 client.user.domain:
   description: 'Name of the directory the user is a member of.
 
@@ -734,6 +913,181 @@ destination.port:
   order: 2
   short: Port of the destination.
   type: long
+destination.process.args:
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example: *id001
+  flat_name: destination.process.args
+  ignore_above: 1024
+  level: extended
+  name: args
+  order: 4
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+destination.process.executable:
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: destination.process.executable
+  ignore_above: 1024
+  level: extended
+  name: executable
+  order: 5
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+destination.process.hash.md5:
+  description: MD5 hash.
+  flat_name: destination.process.hash.md5
+  ignore_above: 1024
+  level: extended
+  name: md5
+  order: 0
+  original_fieldset: process
+  short: MD5 hash.
+  type: keyword
+destination.process.hash.sha1:
+  description: SHA1 hash.
+  flat_name: destination.process.hash.sha1
+  ignore_above: 1024
+  level: extended
+  name: sha1
+  order: 1
+  original_fieldset: process
+  short: SHA1 hash.
+  type: keyword
+destination.process.hash.sha256:
+  description: SHA256 hash.
+  flat_name: destination.process.hash.sha256
+  ignore_above: 1024
+  level: extended
+  name: sha256
+  order: 2
+  original_fieldset: process
+  short: SHA256 hash.
+  type: keyword
+destination.process.hash.sha512:
+  description: SHA512 hash.
+  flat_name: destination.process.hash.sha512
+  ignore_above: 1024
+  level: extended
+  name: sha512
+  order: 3
+  original_fieldset: process
+  short: SHA512 hash.
+  type: keyword
+destination.process.name:
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: destination.process.name
+  ignore_above: 1024
+  level: extended
+  name: name
+  order: 1
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+destination.process.pgid:
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: destination.process.pgid
+  format: string
+  level: extended
+  name: pgid
+  order: 3
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+destination.process.pid:
+  description: Process id.
+  example: 4242
+  flat_name: destination.process.pid
+  format: string
+  level: core
+  name: pid
+  order: 0
+  original_fieldset: process
+  short: Process id.
+  type: long
+destination.process.ppid:
+  description: Parent process' pid.
+  example: 4241
+  flat_name: destination.process.ppid
+  format: string
+  level: extended
+  name: ppid
+  order: 2
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+destination.process.start:
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: destination.process.start
+  level: extended
+  name: start
+  order: 9
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+destination.process.thread.id:
+  description: Thread ID.
+  example: 4242
+  flat_name: destination.process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 7
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+destination.process.thread.name:
+  description: Thread name.
+  example: thread-0
+  flat_name: destination.process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 8
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+destination.process.title:
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: destination.process.title
+  ignore_above: 1024
+  level: extended
+  name: title
+  order: 6
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+destination.process.uptime:
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: destination.process.uptime
+  level: extended
+  name: uptime
+  order: 10
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+destination.process.working_directory:
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: destination.process.working_directory
+  ignore_above: 1024
+  level: extended
+  name: working_directory
+  order: 11
+  original_fieldset: process
+  short: The working directory of the process.
+  type: keyword
 destination.user.domain:
   description: 'Name of the directory the user is a member of.
 
@@ -2462,11 +2816,7 @@ process.args:
   description: 'Array of process arguments.
 
     May be filtered to protect sensitive information.'
-  example:
-  - ssh
-  - -l
-  - user
-  - 10.0.0.16
+  example: *id001
   flat_name: process.args
   ignore_above: 1024
   level: extended
@@ -2842,6 +3192,181 @@ server.port:
   order: 2
   short: Port of the server.
   type: long
+server.process.args:
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example: *id001
+  flat_name: server.process.args
+  ignore_above: 1024
+  level: extended
+  name: args
+  order: 4
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+server.process.executable:
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: server.process.executable
+  ignore_above: 1024
+  level: extended
+  name: executable
+  order: 5
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+server.process.hash.md5:
+  description: MD5 hash.
+  flat_name: server.process.hash.md5
+  ignore_above: 1024
+  level: extended
+  name: md5
+  order: 0
+  original_fieldset: process
+  short: MD5 hash.
+  type: keyword
+server.process.hash.sha1:
+  description: SHA1 hash.
+  flat_name: server.process.hash.sha1
+  ignore_above: 1024
+  level: extended
+  name: sha1
+  order: 1
+  original_fieldset: process
+  short: SHA1 hash.
+  type: keyword
+server.process.hash.sha256:
+  description: SHA256 hash.
+  flat_name: server.process.hash.sha256
+  ignore_above: 1024
+  level: extended
+  name: sha256
+  order: 2
+  original_fieldset: process
+  short: SHA256 hash.
+  type: keyword
+server.process.hash.sha512:
+  description: SHA512 hash.
+  flat_name: server.process.hash.sha512
+  ignore_above: 1024
+  level: extended
+  name: sha512
+  order: 3
+  original_fieldset: process
+  short: SHA512 hash.
+  type: keyword
+server.process.name:
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: server.process.name
+  ignore_above: 1024
+  level: extended
+  name: name
+  order: 1
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+server.process.pgid:
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: server.process.pgid
+  format: string
+  level: extended
+  name: pgid
+  order: 3
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+server.process.pid:
+  description: Process id.
+  example: 4242
+  flat_name: server.process.pid
+  format: string
+  level: core
+  name: pid
+  order: 0
+  original_fieldset: process
+  short: Process id.
+  type: long
+server.process.ppid:
+  description: Parent process' pid.
+  example: 4241
+  flat_name: server.process.ppid
+  format: string
+  level: extended
+  name: ppid
+  order: 2
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+server.process.start:
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: server.process.start
+  level: extended
+  name: start
+  order: 9
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+server.process.thread.id:
+  description: Thread ID.
+  example: 4242
+  flat_name: server.process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 7
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+server.process.thread.name:
+  description: Thread name.
+  example: thread-0
+  flat_name: server.process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 8
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+server.process.title:
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: server.process.title
+  ignore_above: 1024
+  level: extended
+  name: title
+  order: 6
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+server.process.uptime:
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: server.process.uptime
+  level: extended
+  name: uptime
+  order: 10
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+server.process.working_directory:
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: server.process.working_directory
+  ignore_above: 1024
+  level: extended
+  name: working_directory
+  order: 11
+  original_fieldset: process
+  short: The working directory of the process.
+  type: keyword
 server.user.domain:
   description: 'Name of the directory the user is a member of.
 
@@ -3227,6 +3752,181 @@ source.port:
   order: 2
   short: Port of the source.
   type: long
+source.process.args:
+  description: 'Array of process arguments.
+
+    May be filtered to protect sensitive information.'
+  example: *id001
+  flat_name: source.process.args
+  ignore_above: 1024
+  level: extended
+  name: args
+  order: 4
+  original_fieldset: process
+  short: Array of process arguments.
+  type: keyword
+source.process.executable:
+  description: Absolute path to the process executable.
+  example: /usr/bin/ssh
+  flat_name: source.process.executable
+  ignore_above: 1024
+  level: extended
+  name: executable
+  order: 5
+  original_fieldset: process
+  short: Absolute path to the process executable.
+  type: keyword
+source.process.hash.md5:
+  description: MD5 hash.
+  flat_name: source.process.hash.md5
+  ignore_above: 1024
+  level: extended
+  name: md5
+  order: 0
+  original_fieldset: process
+  short: MD5 hash.
+  type: keyword
+source.process.hash.sha1:
+  description: SHA1 hash.
+  flat_name: source.process.hash.sha1
+  ignore_above: 1024
+  level: extended
+  name: sha1
+  order: 1
+  original_fieldset: process
+  short: SHA1 hash.
+  type: keyword
+source.process.hash.sha256:
+  description: SHA256 hash.
+  flat_name: source.process.hash.sha256
+  ignore_above: 1024
+  level: extended
+  name: sha256
+  order: 2
+  original_fieldset: process
+  short: SHA256 hash.
+  type: keyword
+source.process.hash.sha512:
+  description: SHA512 hash.
+  flat_name: source.process.hash.sha512
+  ignore_above: 1024
+  level: extended
+  name: sha512
+  order: 3
+  original_fieldset: process
+  short: SHA512 hash.
+  type: keyword
+source.process.name:
+  description: 'Process name.
+
+    Sometimes called program name or similar.'
+  example: ssh
+  flat_name: source.process.name
+  ignore_above: 1024
+  level: extended
+  name: name
+  order: 1
+  original_fieldset: process
+  short: Process name.
+  type: keyword
+source.process.pgid:
+  description: Identifier of the group of processes the process belongs to.
+  flat_name: source.process.pgid
+  format: string
+  level: extended
+  name: pgid
+  order: 3
+  original_fieldset: process
+  short: Identifier of the group of processes the process belongs to.
+  type: long
+source.process.pid:
+  description: Process id.
+  example: 4242
+  flat_name: source.process.pid
+  format: string
+  level: core
+  name: pid
+  order: 0
+  original_fieldset: process
+  short: Process id.
+  type: long
+source.process.ppid:
+  description: Parent process' pid.
+  example: 4241
+  flat_name: source.process.ppid
+  format: string
+  level: extended
+  name: ppid
+  order: 2
+  original_fieldset: process
+  short: Parent process' pid.
+  type: long
+source.process.start:
+  description: The time the process started.
+  example: '2016-05-23T08:05:34.853Z'
+  flat_name: source.process.start
+  level: extended
+  name: start
+  order: 9
+  original_fieldset: process
+  short: The time the process started.
+  type: date
+source.process.thread.id:
+  description: Thread ID.
+  example: 4242
+  flat_name: source.process.thread.id
+  format: string
+  level: extended
+  name: thread.id
+  order: 7
+  original_fieldset: process
+  short: Thread ID.
+  type: long
+source.process.thread.name:
+  description: Thread name.
+  example: thread-0
+  flat_name: source.process.thread.name
+  ignore_above: 1024
+  level: extended
+  name: thread.name
+  order: 8
+  original_fieldset: process
+  short: Thread name.
+  type: keyword
+source.process.title:
+  description: 'Process title.
+
+    The proctitle, some times the same as process name. Can also be different: for
+    example a browser setting its title to the web page currently opened.'
+  flat_name: source.process.title
+  ignore_above: 1024
+  level: extended
+  name: title
+  order: 6
+  original_fieldset: process
+  short: Process title.
+  type: keyword
+source.process.uptime:
+  description: Seconds the process has been up.
+  example: 1325
+  flat_name: source.process.uptime
+  level: extended
+  name: uptime
+  order: 10
+  original_fieldset: process
+  short: Seconds the process has been up.
+  type: long
+source.process.working_directory:
+  description: The working directory of the process.
+  example: /home/alice
+  flat_name: source.process.working_directory
+  ignore_above: 1024
+  level: extended
+  name: working_directory
+  order: 11
+  original_fieldset: process
+  short: The working directory of the process.
+  type: keyword
 source.user.domain:
   description: 'Name of the directory the user is a member of.
 

@@ -353,6 +353,12 @@ type: long
 // ===============================================================
 
 
+| <<ecs-process,client.process.*>>
+| These fields contain information about a process.
+
+// ===============================================================
+
+
 | <<ecs-user,client.user.*>>
 | Fields to describe the user relevant to the event.
 
@@ -685,6 +691,12 @@ type: long
 
 | <<ecs-geo,destination.geo.*>>
 | Fields describing a location.
+
+// ===============================================================
+
+
+| <<ecs-process,destination.process.*>>
+| These fields contain information about a process.
 
 // ===============================================================
 
@@ -2451,6 +2463,10 @@ example: `/home/alice`
 
 ==== Field Reuse
 
+The `process` fields are expected to be nested at: `client.process`, `destination.process`, `server.process`, `source.process`.
+
+Note also that the `process` fields may be used directly at the top level.
+
 
 
 
@@ -2651,6 +2667,12 @@ type: long
 
 | <<ecs-geo,server.geo.*>>
 | Fields describing a location.
+
+// ===============================================================
+
+
+| <<ecs-process,server.process.*>>
+| These fields contain information about a process.
 
 // ===============================================================
 
@@ -2911,6 +2933,12 @@ type: long
 
 | <<ecs-geo,source.geo.*>>
 | Fields describing a location.
+
+// ===============================================================
+
+
+| <<ecs-process,source.process.*>>
+| These fields contain information about a process.
 
 // ===============================================================
 

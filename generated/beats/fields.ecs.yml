@@ -273,6 +273,105 @@
       type: long
       format: string
       description: Port of the client.
+    - name: process.args
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Array of process arguments.
+
+        May be filtered to protect sensitive information.'
+      example: &id001
+      - ssh
+      - -l
+      - user
+      - 10.0.0.16
+    - name: process.executable
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Absolute path to the process executable.
+      example: /usr/bin/ssh
+    - name: process.hash.md5
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+    - name: process.hash.sha1
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+    - name: process.hash.sha256
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+    - name: process.hash.sha512
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+    - name: process.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process name.
+
+        Sometimes called program name or similar.'
+      example: ssh
+    - name: process.pgid
+      level: extended
+      type: long
+      format: string
+      description: Identifier of the group of processes the process belongs to.
+    - name: process.pid
+      level: core
+      type: long
+      format: string
+      description: Process id.
+      example: 4242
+    - name: process.ppid
+      level: extended
+      type: long
+      format: string
+      description: Parent process' pid.
+      example: 4241
+    - name: process.start
+      level: extended
+      type: date
+      description: The time the process started.
+      example: '2016-05-23T08:05:34.853Z'
+    - name: process.thread.id
+      level: extended
+      type: long
+      format: string
+      description: Thread ID.
+      example: 4242
+    - name: process.thread.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Thread name.
+      example: thread-0
+    - name: process.title
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process title.
+
+        The proctitle, some times the same as process name. Can also be different:
+        for example a browser setting its title to the web page currently opened.'
+    - name: process.uptime
+      level: extended
+      type: long
+      description: Seconds the process has been up.
+      example: 1325
+    - name: process.working_directory
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: The working directory of the process.
+      example: /home/alice
     - name: user.domain
       level: extended
       type: keyword
@@ -547,6 +646,101 @@
       type: long
       format: string
       description: Port of the destination.
+    - name: process.args
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Array of process arguments.
+
+        May be filtered to protect sensitive information.'
+      example: *id001
+    - name: process.executable
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Absolute path to the process executable.
+      example: /usr/bin/ssh
+    - name: process.hash.md5
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+    - name: process.hash.sha1
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+    - name: process.hash.sha256
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+    - name: process.hash.sha512
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+    - name: process.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process name.
+
+        Sometimes called program name or similar.'
+      example: ssh
+    - name: process.pgid
+      level: extended
+      type: long
+      format: string
+      description: Identifier of the group of processes the process belongs to.
+    - name: process.pid
+      level: core
+      type: long
+      format: string
+      description: Process id.
+      example: 4242
+    - name: process.ppid
+      level: extended
+      type: long
+      format: string
+      description: Parent process' pid.
+      example: 4241
+    - name: process.start
+      level: extended
+      type: date
+      description: The time the process started.
+      example: '2016-05-23T08:05:34.853Z'
+    - name: process.thread.id
+      level: extended
+      type: long
+      format: string
+      description: Thread ID.
+      example: 4242
+    - name: process.thread.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Thread name.
+      example: thread-0
+    - name: process.title
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process title.
+
+        The proctitle, some times the same as process name. Can also be different:
+        for example a browser setting its title to the web page currently opened.'
+    - name: process.uptime
+      level: extended
+      type: long
+      description: Seconds the process has been up.
+      example: 1325
+    - name: process.working_directory
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: The working directory of the process.
+      example: /home/alice
     - name: user.domain
       level: extended
       type: keyword
@@ -1732,11 +1926,7 @@
       description: 'Array of process arguments.
 
         May be filtered to protect sensitive information.'
-      example:
-      - ssh
-      - -l
-      - user
-      - 10.0.0.16
+      example: *id001
     - name: executable
       level: extended
       type: keyword
@@ -1986,6 +2176,101 @@
       type: long
       format: string
       description: Port of the server.
+    - name: process.args
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Array of process arguments.
+
+        May be filtered to protect sensitive information.'
+      example: *id001
+    - name: process.executable
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Absolute path to the process executable.
+      example: /usr/bin/ssh
+    - name: process.hash.md5
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+    - name: process.hash.sha1
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+    - name: process.hash.sha256
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+    - name: process.hash.sha512
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+    - name: process.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process name.
+
+        Sometimes called program name or similar.'
+      example: ssh
+    - name: process.pgid
+      level: extended
+      type: long
+      format: string
+      description: Identifier of the group of processes the process belongs to.
+    - name: process.pid
+      level: core
+      type: long
+      format: string
+      description: Process id.
+      example: 4242
+    - name: process.ppid
+      level: extended
+      type: long
+      format: string
+      description: Parent process' pid.
+      example: 4241
+    - name: process.start
+      level: extended
+      type: date
+      description: The time the process started.
+      example: '2016-05-23T08:05:34.853Z'
+    - name: process.thread.id
+      level: extended
+      type: long
+      format: string
+      description: Thread ID.
+      example: 4242
+    - name: process.thread.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Thread name.
+      example: thread-0
+    - name: process.title
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process title.
+
+        The proctitle, some times the same as process name. Can also be different:
+        for example a browser setting its title to the web page currently opened.'
+    - name: process.uptime
+      level: extended
+      type: long
+      description: Seconds the process has been up.
+      example: 1325
+    - name: process.working_directory
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: The working directory of the process.
+      example: /home/alice
     - name: user.domain
       level: extended
       type: keyword
@@ -2237,6 +2522,101 @@
       type: long
       format: string
       description: Port of the source.
+    - name: process.args
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Array of process arguments.
+
+        May be filtered to protect sensitive information.'
+      example: *id001
+    - name: process.executable
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Absolute path to the process executable.
+      example: /usr/bin/ssh
+    - name: process.hash.md5
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: MD5 hash.
+    - name: process.hash.sha1
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA1 hash.
+    - name: process.hash.sha256
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA256 hash.
+    - name: process.hash.sha512
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: SHA512 hash.
+    - name: process.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process name.
+
+        Sometimes called program name or similar.'
+      example: ssh
+    - name: process.pgid
+      level: extended
+      type: long
+      format: string
+      description: Identifier of the group of processes the process belongs to.
+    - name: process.pid
+      level: core
+      type: long
+      format: string
+      description: Process id.
+      example: 4242
+    - name: process.ppid
+      level: extended
+      type: long
+      format: string
+      description: Parent process' pid.
+      example: 4241
+    - name: process.start
+      level: extended
+      type: date
+      description: The time the process started.
+      example: '2016-05-23T08:05:34.853Z'
+    - name: process.thread.id
+      level: extended
+      type: long
+      format: string
+      description: Thread ID.
+      example: 4242
+    - name: process.thread.name
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: Thread name.
+      example: thread-0
+    - name: process.title
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: 'Process title.
+
+        The proctitle, some times the same as process name. Can also be different:
+        for example a browser setting its title to the web page currently opened.'
+    - name: process.uptime
+      level: extended
+      type: long
+      description: Seconds the process has been up.
+      example: 1325
+    - name: process.working_directory
+      level: extended
+      type: keyword
+      ignore_above: 1024
+      description: The working directory of the process.
+      example: /home/alice
     - name: user.domain
       level: extended
       type: keyword

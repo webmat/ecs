@@ -9,6 +9,13 @@
     These fields can help you correlate metrics information with a process id/name
     from a log message.  The `process.pid` often stays in the metric itself and is
     copied to the global field for correlation.
+  reusable:
+    top_level: true
+    expected:
+      - client
+      - destination
+      - server
+      - source
   type: group
   fields:
 
@@ -82,8 +89,8 @@
 
     - name: thread.name
       level: extended
-      type: keyword 
-      example: 'thread-0' 
+      type: keyword
+      example: 'thread-0'
       description: >
         Thread name.
 

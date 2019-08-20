@@ -147,6 +147,76 @@
           "port": {
             "type": "long"
           }, 
+          "process": {
+            "properties": {
+              "args": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "executable": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "hash": {
+                "properties": {
+                  "md5": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha1": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha256": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha512": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "name": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "pgid": {
+                "type": "long"
+              }, 
+              "pid": {
+                "type": "long"
+              }, 
+              "ppid": {
+                "type": "long"
+              }, 
+              "start": {
+                "type": "date"
+              }, 
+              "thread": {
+                "properties": {
+                  "id": {
+                    "type": "long"
+                  }, 
+                  "name": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "title": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "uptime": {
+                "type": "long"
+              }, 
+              "working_directory": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }
+            }
+          }, 
           "user": {
             "properties": {
               "domain": {
@@ -349,6 +419,76 @@
           }, 
           "port": {
             "type": "long"
+          }, 
+          "process": {
+            "properties": {
+              "args": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "executable": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "hash": {
+                "properties": {
+                  "md5": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha1": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha256": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha512": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "name": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "pgid": {
+                "type": "long"
+              }, 
+              "pid": {
+                "type": "long"
+              }, 
+              "ppid": {
+                "type": "long"
+              }, 
+              "start": {
+                "type": "date"
+              }, 
+              "thread": {
+                "properties": {
+                  "id": {
+                    "type": "long"
+                  }, 
+                  "name": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "title": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "uptime": {
+                "type": "long"
+              }, 
+              "working_directory": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }
+            }
           }, 
           "user": {
             "properties": {
@@ -1215,6 +1355,76 @@
           "port": {
             "type": "long"
           }, 
+          "process": {
+            "properties": {
+              "args": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "executable": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "hash": {
+                "properties": {
+                  "md5": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha1": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha256": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha512": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "name": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "pgid": {
+                "type": "long"
+              }, 
+              "pid": {
+                "type": "long"
+              }, 
+              "ppid": {
+                "type": "long"
+              }, 
+              "start": {
+                "type": "date"
+              }, 
+              "thread": {
+                "properties": {
+                  "id": {
+                    "type": "long"
+                  }, 
+                  "name": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "title": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "uptime": {
+                "type": "long"
+              }, 
+              "working_directory": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }
+            }
+          }, 
           "user": {
             "properties": {
               "domain": {
@@ -1370,6 +1580,76 @@
           }, 
           "port": {
             "type": "long"
+          }, 
+          "process": {
+            "properties": {
+              "args": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "executable": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "hash": {
+                "properties": {
+                  "md5": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha1": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha256": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }, 
+                  "sha512": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "name": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "pgid": {
+                "type": "long"
+              }, 
+              "pid": {
+                "type": "long"
+              }, 
+              "ppid": {
+                "type": "long"
+              }, 
+              "start": {
+                "type": "date"
+              }, 
+              "thread": {
+                "properties": {
+                  "id": {
+                    "type": "long"
+                  }, 
+                  "name": {
+                    "ignore_above": 1024, 
+                    "type": "keyword"
+                  }
+                }
+              }, 
+              "title": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }, 
+              "uptime": {
+                "type": "long"
+              }, 
+              "working_directory": {
+                "ignore_above": 1024, 
+                "type": "keyword"
+              }
+            }
           }, 
           "user": {
             "properties": {
