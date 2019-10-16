@@ -63,4 +63,9 @@ type Package struct {
 	// If available, use reference URL pointing to the project website that is
 	// contained in the package.
 	Reference string `ecs:"reference"`
+
+	// Type of package.
+	// When installed from a package manager, this would contain the package
+	// manager name, e.g. RPM, DPKG, Homebrew, NPM.
+	Type string `ecs:"type"`
 }
