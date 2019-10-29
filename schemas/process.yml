@@ -9,6 +9,12 @@
     These fields can help you correlate metrics information with a process id/name
     from a log message.  The `process.pid` often stays in the metric itself and is
     copied to the global field for correlation.
+  reusable:
+    top_level: true
+    expected:
+      - location: process
+        nested_name: parent
+
   type: group
   fields:
 
