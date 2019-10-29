@@ -88,8 +88,8 @@
 
     - name: thread.name
       level: extended
-      type: keyword 
-      example: 'thread-0' 
+      type: keyword
+      example: 'thread-0'
       description: >
         Thread name.
 
