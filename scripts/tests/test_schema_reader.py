@@ -106,5 +106,20 @@ class TestSchemaReader(unittest.TestCase):
         self.assertEqual(result, ({}, {}))
 
 
+    # Specification of field reuse / nesting
+    def test_reuse_dest_can_be_string(self):
+        expanded_nesting = schema_reader.expand_nesting_destination('host', 'os')
+        self.assertEqual({'name': 'os', 'location': 'host'}, expanded_nesting)
+
+    def test_reuse_dest_can_be_object(self):
+        expanded_nesting = schema_reader.expand_nesting_destination({'location': 'process', 'name':'parent'}, 'process')
+        self.assertEqual({'location': 'process', 'name':'parent'}, expanded_nesting)
+
+    def test_reuse_dest_object_requires_name_location(self):
+        incompletes = [{}, {'foo': 'bar'}, {'name':'foo'}, {'location':'foo'}]
+        for incomplete in incompletes:
+            with self.assertRaises(ValueError):
+                schema_reader.expand_nesting_destination(incomplete, 'user')
+
 if __name__ == '__main__':
     unittest.main()

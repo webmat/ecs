@@ -118,12 +118,23 @@ def field_set_multi_field_defaults(parent_field):
         mf['flat_name'] = parent_field['flat_name'] + '.' + mf['name']
 
 
+def expand_nesting_destination(nesting, nested_fieldset_name):
+    if type(nesting) is str:
+        full_nesting = { 'name': nested_fieldset_name, 'location': nesting }
+    else:
+        if 'name' in nesting and 'location' in nesting:
+            full_nesting = nesting
+        else:
+            raise ValueError("Expected a string or a dict with keys 'name' and 'location', got: {}".format(nesting))
+    return full_nesting
+
+
 def duplicate_reusable_fieldsets(schema, fields_flat, fields_nested):
     """Copies reusable field definitions to their expected places"""
     # Note: across this schema reader, functions are modifying dictionaries passed
     # as arguments, which is usually a risk of unintended side effects.
     # Here it simplifies the nesting of 'group' under 'user',
-    # which is in turn reusable in a few places.
+    # which is in turn reused in a few places.
     if 'reusable' in schema:
         for new_nesting in schema['reusable']['expected']:
 

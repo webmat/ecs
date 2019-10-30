@@ -13,7 +13,7 @@
     top_level: true
     expected:
       - location: process
-        nested_name: parent
+        name: parent
 
   type: group
   fields:
