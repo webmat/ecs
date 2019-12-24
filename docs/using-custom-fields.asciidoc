@@ -17,7 +17,8 @@ ECS is under active development, however. Adding custom fields carries a small
 risk of conflicting with a future ECS field.
 There are ways of modeling custom fields that will lead to
 lower chances of conflict with future versions of ECS.
-This section outlines a few of these strategies.
+This section outlines a few of these strategies, and discusses what it means to
+"have a conflict with ECS".
 
 [float]
 ==== Modeling to Reduce Chances of Conflict
@@ -119,3 +120,64 @@ The above will look strange during the migration. However the ability to start
 populating ECS fields while custom fields are still present in your events makes
 it possible to decouple the upgrade to a new version of ECS from the time you
 adjust your pipelines and analysis content.
+
+[float]
+==== What Does it Means to Have Conflict with ECS?
+
+The meaning and impact of a conflict with ECS will vary, depending on how the
+pipeline and indices are designed.
+
+[float]
+===== Incorrect Data Type
+
+Scenario: custom field `proxy.request_id` is added as a numeric field, and ECS
+adds the same field as a `keyword` field.
+
+Custom field:
+
+[source,json]
+-------------
+{ "proxy": { "request_id": 42 } }
+-------------
+
+New ECS field:
+
+[source,json]
+-------------
+{ "proxy": { "request_id": "42" } }
+-------------
+
+Datatype conflicts may prevent querying this field across indices that contain
+both the old and new format of the events. Kibana index patterns will make these
+fields as in "conflict".
+
+This type of conflict is relatively straightforward to address, as simply
+adjusting the datatype of older indices and reindexing will make all recent
+history compatible with the new format.
+
+[float]
+===== Incorrect Nesting
+
+Scenario: custom fields `proxy` and `backend` are added, and ECS adds field set
+`proxy.*`
+
+Custom fields:
+
+[source,json]
+-------------
+{ "proxy": "myfrontend", "backend": "mybackend_prod" }
+-------------
+
+Custom fields:
+
+[source,json]
+-------------
+{ "proxy": { "frontend_name": "myfrontend", "backend_name": "mybackend_prod" } }
+-------------
+
+This is the most problematic kind of conflict. If backwards compatibility is
+important, this situation may need to be addressed in multiple steps.
+The first step is to delete or remove the offending `proxy` field in the recent history. You'll notice that it's impossible to reindex past history by renaming `proxy` to `proxy.frontend`, because `proxy` is already defined as `keyword`.
+
+So fully handling this situation in a backwards compatible way entails the first
+rename, then adjusting all analysis content to this rename.
