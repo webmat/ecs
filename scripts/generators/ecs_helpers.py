@@ -51,8 +51,8 @@ def safe_merge_dicts(a, b):
 
 def yaml_ordereddict(dumper, data):
     # YAML representation of an OrderedDict will be like a dictionary, but
-    # respecting the order of the dictionary.
-    # Almost sure it's unndecessary with Python 3.
+    # respecting the order of insertion in the dictionary.
+    # Note: Python 3's dict is sorted by key name, which is different.
     value = []
     for item_key, item_value in data.items():
         node_key = dumper.represent_data(item_key)
