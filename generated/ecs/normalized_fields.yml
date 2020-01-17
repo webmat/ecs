@@ -1,0 +1,56 @@
+container.image.tag:
+- array
+dns.answers:
+- array
+dns.header_flags:
+- array
+dns.resolved_ip:
+- array
+error.message:
+- array
+event.category:
+- array
+event.type:
+- array
+host.ip:
+- array
+host.mac:
+- array
+observer.ip:
+- array
+observer.mac:
+- array
+process.args:
+- array
+process.parent.args:
+- array
+related.hash:
+- array
+related.ip:
+- array
+related.user:
+- array
+tags:
+- array
+threat.tactic.id:
+- array
+threat.tactic.name:
+- array
+threat.tactic.reference:
+- array
+threat.technique.id:
+- array
+threat.technique.name:
+- array
+threat.technique.reference:
+- array
+tls.client.certificate_chain:
+- array
+tls.client.supported_ciphers:
+- array
+tls.server.certificate_chain:
+- array
+user.id:
+- array
+vulnerability.category:
+- array

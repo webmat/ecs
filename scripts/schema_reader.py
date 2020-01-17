@@ -155,7 +155,7 @@ def duplicate_reusable_fieldsets(schema, fields_flat, fields_nested):
 # Main
 
 
-def finalize_schemas(fields_nested, fields_flat):
+def finalize_schemas(fields_nested, fields_flat, normalized_fields):
     for schema_name in fields_nested:
         schema = fields_nested[schema_name]
 
@@ -163,8 +163,10 @@ def finalize_schemas(fields_nested, fields_flat):
 
         for (name, field) in schema['fields'].items():
             field_cleanup_values(field, schema['prefix'])
-
             fields_flat[field['flat_name']] = field
+
+            if 'normalize' in field:
+                normalized_fields[field['flat_name']] = field['normalize']
 
     # This happens as a second pass, so that all fieldsets have their
     # fields array replaced with a fields dictionary.
@@ -178,5 +180,6 @@ def load_schemas(files=ecs_files()):
     """Loads the given list of files"""
     fields_nested = load_schema_files(files)
     fields_flat = {}
-    finalize_schemas(fields_nested, fields_flat)
-    return (fields_nested, fields_flat)
+    normalized_fields = {}
+    finalize_schemas(fields_nested, fields_flat, normalized_fields)
+    return (fields_nested, fields_flat, normalized_fields)
