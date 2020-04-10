@@ -119,32 +119,6 @@
       ignore_above: 1024
       description: Version of the agent.
       example: 6.0.0-rc2
-  - name: as
-    title: Autonomous System
-    group: 2
-    description: An autonomous system (AS) is a collection of connected Internet Protocol
-      (IP) routing prefixes under the control of one or more network operators on
-      behalf of a single administrative entity or domain that presents a common, clearly
-      defined routing policy to the internet.
-    type: group
-    fields:
-    - name: number
-      level: extended
-      type: long
-      description: Unique number allocated to the autonomous system. The autonomous
-        system number (ASN) uniquely identifies each network on the Internet.
-      example: 15169
-    - name: organization.name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-        default_field: false
-      description: Organization name.
-      example: Google LLC
   - name: client
     title: Client
     group: 2
@@ -436,54 +410,6 @@
       ignore_above: 1024
       description: Region in which this host is running.
       example: us-east-1
-  - name: code_signature
-    title: Code Signature
-    group: 2
-    description: These fields contain information about binary code signatures.
-    type: group
-    fields:
-    - name: exists
-      level: core
-      type: boolean
-      description: Boolean to capture if a signature is present.
-      example: 'true'
-      default_field: false
-    - name: status
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: 'Additional information about the certificate status.
-
-        This is useful for logging cryptographic errors with the certificate validity
-        or trust status. Leave unpopulated if the validity or trust of the certificate
-        was unchecked.'
-      example: ERROR_UNTRUSTED_ROOT
-      default_field: false
-    - name: subject_name
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Subject name of the code signer
-      example: Microsoft Corporation
-      default_field: false
-    - name: trusted
-      level: extended
-      type: boolean
-      description: 'Stores the trust status of the certificate chain.
-
-        Validating the trust of the certificate chain may be complicated, and this
-        field should only be populated by tools that actively check the status.'
-      example: 'true'
-      default_field: false
-    - name: valid
-      level: extended
-      type: boolean
-      description: 'Boolean to capture if the digital signature is verified against
-        the binary content.
-
-        Leave unpopulated if a certificate was unchecked.'
-      example: 'true'
-      default_field: false
   - name: container
     title: Container
     group: 2
@@ -1683,69 +1609,6 @@
       ignore_above: 1024
       description: The user ID (UID) or security identifier (SID) of the file owner.
       example: '1001'
-  - name: geo
-    title: Geo
-    group: 2
-    description: 'Geo fields can carry data about a specific location related to an
-      event.
-
-      This geolocation information can be derived from techniques such as Geo IP,
-      or be user-supplied.'
-    type: group
-    fields:
-    - name: city_name
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: City name.
-      example: Montreal
-    - name: continent_name
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Name of the continent.
-      example: North America
-    - name: country_iso_code
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Country ISO code.
-      example: CA
-    - name: country_name
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Country name.
-      example: Canada
-    - name: location
-      level: core
-      type: geo_point
-      description: Longitude and latitude.
-      example: '{ "lon": -73.614830, "lat": 45.505918 }'
-    - name: name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: 'User-defined description of a location, at the level of granularity
-        they care about.
-
-        Could be the name of their data centers, the floor number, if this describes
-        a local physical entity, city names.
-
-        Not typically used in automated geolocation.'
-      example: boston-dc
-    - name: region_iso_code
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Region ISO code.
-      example: CA-QC
-    - name: region_name
-      level: core
-      type: keyword
-      ignore_above: 1024
-      description: Region name.
-      example: Quebec
   - name: group
     title: Group
     group: 2
@@ -1770,36 +1633,6 @@
       type: keyword
       ignore_above: 1024
       description: Name of the group.
-  - name: hash
-    title: Hash
-    group: 2
-    description: 'The hash fields represent different hash algorithms and their values.
-
-      Field names for common hashes (e.g. MD5, SHA1) are predefined. Add fields for
-      other hashes by lowercasing the hash algorithm name and using underscore separators
-      as appropriate (snake case, e.g. sha3_512).'
-    type: group
-    fields:
-    - name: md5
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: MD5 hash.
-    - name: sha1
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: SHA1 hash.
-    - name: sha256
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: SHA256 hash.
-    - name: sha512
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: SHA512 hash.
   - name: host
     title: Host
     group: 2
@@ -2119,39 +1952,6 @@
       ignore_above: 1024
       description: HTTP version.
       example: 1.1
-  - name: interface
-    title: Interface
-    group: 2
-    description: The interface fields are used to record ingress and egress interface
-      information when reported by an observer (e.g. firewall, router, load balancer)
-      in the context of the observer handling a network connection.  In the case of
-      a single observer interface (e.g. network sensor on a span port) only the observer.ingress
-      information should be populated.
-    type: group
-    fields:
-    - name: alias
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Interface alias as reported by the system, typically used in firewall
-        implementations for e.g. inside, outside, or dmz logical interface naming.
-      example: outside
-      default_field: false
-    - name: id
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Interface ID as reported by an observer (typically SNMP interface
-        ID).
-      example: 10
-      default_field: false
-    - name: name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Interface name as reported by the system.
-      example: eth0
-      default_field: false
   - name: log
     title: Log
     group: 2
@@ -2736,58 +2536,6 @@
         norms: false
         default_field: false
       description: Organization name.
-  - name: os
-    title: Operating System
-    group: 2
-    description: The OS fields contain information about the operating system.
-    type: group
-    fields:
-    - name: family
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: OS family (such as redhat, debian, freebsd, windows).
-      example: debian
-    - name: full
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-        default_field: false
-      description: Operating system name, including the version or code name.
-      example: Mac OS Mojave
-    - name: kernel
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Operating system kernel version as a raw string.
-      example: 4.4.0-112-generic
-    - name: name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      multi_fields:
-      - name: text
-        type: text
-        norms: false
-        default_field: false
-      description: Operating system name, without the version.
-      example: Mac OS X
-    - name: platform
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Operating system platform (such centos, ubuntu, windows).
-      example: darwin
-    - name: version
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Operating system version as a raw string.
-      example: 10.14.1
   - name: package
     title: Package
     group: 2
@@ -2886,65 +2634,6 @@
       ignore_above: 1024
       description: Package version
       example: 1.12.9
-  - name: pe
-    title: PE Header
-    group: 2
-    description: These fields contain Windows Portable Executable (PE) metadata.
-    type: group
-    fields:
-    - name: architecture
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: CPU architecture target for the file.
-      example: x64
-      default_field: false
-    - name: company
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Internal company name of the file, provided at compile-time.
-      example: Microsoft Corporation
-      default_field: false
-    - name: description
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Internal description of the file, provided at compile-time.
-      example: Paint
-      default_field: false
-    - name: file_version
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Internal version of the file, provided at compile-time.
-      example: 6.3.9600.17415
-      default_field: false
-    - name: imphash
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: 'A hash of the imports in a PE file. An imphash -- or import hash
-        -- can be used to fingerprint binaries even after recompilation or other code-level
-        transformations have occurred, which would change more traditional hash values.
-
-        Learn more at https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html.'
-      example: 0c6803c4e922103c4dca5963aad36ddf
-      default_field: false
-    - name: original_file_name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Internal name of the file, provided at compile-time.
-      example: MSPAINT.EXE
-      default_field: false
-    - name: product
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Internal product name of the file, provided at compile-time.
-      example: "Microsoft\xAE Windows\xAE Operating System"
-      default_field: false
   - name: process
     title: Process
     group: 2
@@ -4810,41 +4499,6 @@
       ignore_above: 1024
       description: Version of the user agent.
       example: 12.0
-  - name: vlan
-    title: VLAN
-    group: 2
-    description: 'The VLAN fields are used to identify 802.1q tag(s) of a packet,
-      as well as ingress and egress VLAN associations of an observer in relation to
-      a specific packet or connection.
-
-      Network.vlan fields are used to record a single VLAN tag, or the outer tag in
-      the case of q-in-q encapsulations, for a packet or connection as observed, typically
-      provided by a network sensor (e.g. Zeek, Wireshark) passively reporting on traffic.
-
-      Network.inner VLAN fields are used to report inner q-in-q 802.1q tags (multiple
-      802.1q encapsulations) as observed, typically provided by a network sensor  (e.g.
-      Zeek, Wireshark) passively reporting on traffic. Network.inner VLAN fields should
-      only be used in addition to network.vlan fields to indicate q-in-q tagging.
-
-      Observer.ingress and observer.egress VLAN values are used to record observer
-      specific information when observer events contain discrete ingress and egress
-      VLAN information, typically provided by firewalls, routers, or load balancers.'
-    type: group
-    fields:
-    - name: id
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: VLAN ID as reported by the observer.
-      example: 10
-      default_field: false
-    - name: name
-      level: extended
-      type: keyword
-      ignore_above: 1024
-      description: Optional VLAN name as reported by the observer.
-      example: outside
-      default_field: false
   - name: vulnerability
     title: Vulnerability
     group: 2

@@ -17,6 +17,10 @@ def generate(ecs_nested, ecs_version, out_dir):
             continue
         fieldset = ecs_nested[fieldset_name]
 
+        # Skip reusable fieldsets that aren't expected at the root of documents
+        if fieldset.get('reusable', None) and fieldset['reusable']['top_level'] == False:
+            continue
+
         beats_field = ecs_helpers.dict_copy_keys_ordered(fieldset, allowed_fieldset_keys)
         beats_field['fields'] = fieldset_field_array(fieldset['fields'], df_whitelist)
         beats_fields.append(beats_field)
