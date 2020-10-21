@@ -44,6 +44,13 @@ from generators import ecs_helpers
 
 def load_schemas(ref=None, included_files=[]):
     """Loads ECS and custom schemas. They are returned deeply nested and merged."""
+    # Demo bugfix
+    flat_list = []
+    for sublist in included_files:
+        for item in sublist:
+            flat_list.append(item)
+    included_files = flat_list
+
     # ECS fields (from git ref or not)
     if ref:
         schema_files_raw = load_schemas_from_git(ref)
