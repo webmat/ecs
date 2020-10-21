@@ -459,6 +459,24 @@ client:
       normalize: []
       short: The highest registered client domain, stripped of the subdomain.
       type: keyword
+    client.subdomain:
+      dashed_name: client-subdomain
+      description: 'The subdomain portion of a fully qualified domain name includes
+        all of the names except the host name under the registered_domain.  In a partially
+        qualified domain, or if the the qualification level of the full name cannot
+        be determined, subdomain contains all of the names below the registered domain.
+
+        For example the subdomain portion of "www.east.mydomain.co.uk" is "east".
+        If the domain has multiple levels of subdomain, such as "sub2.sub1.example.com",
+        the subdomain field should contain "sub2.sub1", with no trailing period.'
+      example: east
+      flat_name: client.subdomain
+      ignore_above: 1024
+      level: extended
+      name: subdomain
+      normalize: []
+      short: The subdomain of the domain.
+      type: keyword
     client.top_level_domain:
       dashed_name: client-top-level-domain
       description: 'The effective top level domain (eTLD), also known as the domain
@@ -629,9 +647,15 @@ client:
   title: Client
   type: group
 destination:
-  description: 'Destination fields describe details about the destination of a packet/event.
+  description: 'Destination fields capture details about the receiver of a network
+    exchange/packet. These fields are populated from a network event, packet, or other
+    event containing details of a network transaction.
 
-    Destination fields are usually populated in conjunction with source fields.'
+    Destination fields are usually populated in conjunction with source fields. The
+    source and destination fields are considered the baseline and should always be
+    filled if an event contains source and destination details from a network transaction.
+    If the event also contains identification of the client and server roles, then
+    the client and server fields should also be populated.'
   fields:
     destination.address:
       dashed_name: destination-address
@@ -879,6 +903,24 @@ destination:
       normalize: []
       short: The highest registered destination domain, stripped of the subdomain.
       type: keyword
+    destination.subdomain:
+      dashed_name: destination-subdomain
+      description: 'The subdomain portion of a fully qualified domain name includes
+        all of the names except the host name under the registered_domain.  In a partially
+        qualified domain, or if the the qualification level of the full name cannot
+        be determined, subdomain contains all of the names below the registered domain.
+
+        For example the subdomain portion of "www.east.mydomain.co.uk" is "east".
+        If the domain has multiple levels of subdomain, such as "sub2.sub1.example.com",
+        the subdomain field should contain "sub2.sub1", with no trailing period.'
+      example: east
+      flat_name: destination.subdomain
+      ignore_above: 1024
+      level: extended
+      name: subdomain
+      normalize: []
+      short: The subdomain of the domain.
+      type: keyword
     destination.top_level_domain:
       dashed_name: destination-top-level-domain
       description: 'The effective top level domain (eTLD), also known as the domain
@@ -1115,6 +1157,19 @@ event:
         - end
         - info
         name: authentication
+      - description: 'Events in the configuration category have to deal with creating,
+          modifying, or deleting the settings or parameters of an application, process,
+          or system.
+
+          Example sources include security policy change logs, configuration auditing
+          logging, and system integrity monitoring.'
+        expected_event_types:
+        - access
+        - change
+        - creation
+        - deletion
+        - info
+        name: configuration
       - description: The database category denotes events and metrics relating to
           a data storage and retrieval system. Note that use of this category is not
           limited to relational database systems. Examples include event logs from
@@ -1774,12 +1829,6 @@ event:
           should not use the protocol value. Further note that when the protocol subcategory
           is used, the identified protocol is populated in the ECS `network.protocol`
           field.
-        expected_event_types:
-        - access
-        - change
-        - end
-        - info
-        - start
         name: protocol
       - description: The start event type is used for the subset of events within
           a category that indicate something has started. A common example is `event.category:process
@@ -1891,6 +1940,22 @@ http:
       normalize: []
       short: HTTP request method.
       type: keyword
+    http.request.mime_type:
+      dashed_name: http-request-mime-type
+      description: 'Mime type of the body of the request.
+
+        This value must only be populated based on the content of the request body,
+        not on the `Content-Type` header. Comparing the mime type of a request with
+        the request''s Content-Type header can be helpful in detecting threats or
+        misconfigured clients.'
+      example: image/gif
+      flat_name: http.request.mime_type
+      ignore_above: 1024
+      level: extended
+      name: request.mime_type
+      normalize: []
+      short: Mime type of the body of the request.
+      type: keyword
     http.request.referrer:
       dashed_name: http-request-referrer
       description: Referrer for this HTTP request.
@@ -1940,6 +2005,22 @@ http:
       normalize: []
       short: Total size in bytes of the response (body and headers).
       type: long
+    http.response.mime_type:
+      dashed_name: http-response-mime-type
+      description: 'Mime type of the body of the response.
+
+        This value must only be populated based on the content of the response body,
+        not on the `Content-Type` header. Comparing the mime type of a response with
+        the response''s Content-Type header can be helpful in detecting misconfigured
+        servers.'
+      example: image/gif
+      flat_name: http.response.mime_type
+      ignore_above: 1024
+      level: extended
+      name: response.mime_type
+      normalize: []
+      short: Mime type of the body of the response.
+      type: keyword
     http.response.status_code:
       dashed_name: http-response-status-code
       description: HTTP response status code.
@@ -2025,11 +2106,17 @@ network:
     network.direction:
       dashed_name: network-direction
       description: "Direction of the network traffic.\nRecommended values are:\n \
-        \ * inbound\n  * outbound\n  * internal\n  * external\n  * unknown\n\nWhen\
-        \ mapping events from a host-based monitoring context, populate this field\
-        \ from the host's point of view.\nWhen mapping events from a network or perimeter-based\
-        \ monitoring context, populate this field from the point of view of your network\
-        \ perimeter."
+        \ * ingress\n  * egress\n  * inbound\n  * outbound\n  * internal\n  * external\n\
+        \  * unknown\n\nWhen mapping events from a host-based monitoring context,\
+        \ populate this field from the host's point of view, using the values \"ingress\"\
+        \ or \"egress\".\nWhen mapping events from a network or perimeter-based monitoring\
+        \ context, populate this field from the point of view of the network perimeter,\
+        \ using the values \"inbound\", \"outbound\", \"internal\" or \"external\"\
+        .\nNote that \"internal\" is not crossing perimeter boundaries, and is meant\
+        \ to describe communication between two hosts within the perimeter. Note also\
+        \ that \"external\" is meant to describe traffic between two hosts that are\
+        \ external to the perimeter. This could for example be useful for ISPs or\
+        \ VPN service providers."
       example: inbound
       flat_name: network.direction
       ignore_above: 1024
@@ -2064,8 +2151,8 @@ network:
     network.inner:
       dashed_name: network-inner
       description: Network.inner fields are added in addition to network.vlan fields
-        to describe  the innermost VLAN when q-in-q VLAN tagging is present. Allowed
-        fields include  vlan.id and vlan.name. Inner vlan fields are typically used
+        to describe the innermost VLAN when q-in-q VLAN tagging is present. Allowed
+        fields include vlan.id and vlan.name. Inner vlan fields are typically used
         when sending traffic with multiple 802.1q encapsulations to a network sensor
         (e.g. Zeek, Wireshark.)
       flat_name: network.inner
@@ -2510,6 +2597,24 @@ server:
       normalize: []
       short: The highest registered server domain, stripped of the subdomain.
       type: keyword
+    server.subdomain:
+      dashed_name: server-subdomain
+      description: 'The subdomain portion of a fully qualified domain name includes
+        all of the names except the host name under the registered_domain.  In a partially
+        qualified domain, or if the the qualification level of the full name cannot
+        be determined, subdomain contains all of the names below the registered domain.
+
+        For example the subdomain portion of "www.east.mydomain.co.uk" is "east".
+        If the domain has multiple levels of subdomain, such as "sub2.sub1.example.com",
+        the subdomain field should contain "sub2.sub1", with no trailing period.'
+      example: east
+      flat_name: server.subdomain
+      ignore_above: 1024
+      level: extended
+      name: subdomain
+      normalize: []
+      short: The subdomain of the domain.
+      type: keyword
     server.top_level_domain:
       dashed_name: server-top-level-domain
       description: 'The effective top level domain (eTLD), also known as the domain
@@ -2680,9 +2785,15 @@ server:
   title: Server
   type: group
 source:
-  description: 'Source fields describe details about the source of a packet/event.
+  description: 'Source fields capture details about the sender of a network exchange/packet.
+    These fields are populated from a network event, packet, or other event containing
+    details of a network transaction.
 
-    Source fields are usually populated in conjunction with destination fields.'
+    Source fields are usually populated in conjunction with destination fields. The
+    source and destination fields are considered the baseline and should always be
+    filled if an event contains source and destination details from a network transaction.
+    If the event also contains identification of the client and server roles, then
+    the client and server fields should also be populated.'
   fields:
     source.address:
       dashed_name: source-address
@@ -2930,6 +3041,24 @@ source:
       name: registered_domain
       normalize: []
       short: The highest registered source domain, stripped of the subdomain.
+      type: keyword
+    source.subdomain:
+      dashed_name: source-subdomain
+      description: 'The subdomain portion of a fully qualified domain name includes
+        all of the names except the host name under the registered_domain.  In a partially
+        qualified domain, or if the the qualification level of the full name cannot
+        be determined, subdomain contains all of the names below the registered domain.
+
+        For example the subdomain portion of "www.east.mydomain.co.uk" is "east".
+        If the domain has multiple levels of subdomain, such as "sub2.sub1.example.com",
+        the subdomain field should contain "sub2.sub1", with no trailing period.'
+      example: east
+      flat_name: source.subdomain
+      ignore_above: 1024
+      level: extended
+      name: subdomain
+      normalize: []
+      short: The subdomain of the domain.
       type: keyword
     source.top_level_domain:
       dashed_name: source-top-level-domain
@@ -3262,6 +3391,24 @@ url:
       name: scheme
       normalize: []
       short: Scheme of the url.
+      type: keyword
+    url.subdomain:
+      dashed_name: url-subdomain
+      description: 'The subdomain portion of a fully qualified domain name includes
+        all of the names except the host name under the registered_domain.  In a partially
+        qualified domain, or if the the qualification level of the full name cannot
+        be determined, subdomain contains all of the names below the registered domain.
+
+        For example the subdomain portion of "www.east.mydomain.co.uk" is "east".
+        If the domain has multiple levels of subdomain, such as "sub2.sub1.example.com",
+        the subdomain field should contain "sub2.sub1", with no trailing period.'
+      example: east
+      flat_name: url.subdomain
+      ignore_above: 1024
+      level: extended
+      name: subdomain
+      normalize: []
+      short: The subdomain of the domain.
       type: keyword
     url.top_level_domain:
       dashed_name: url-top-level-domain
