@@ -79,7 +79,7 @@ Looking back at the original event, it shows the source device is the DNS client
 ----
   "client": {
     "ip": "192.168.86.222",
-    "port": 64734
+    "port": 54162
   }
 ----
 
@@ -248,7 +248,7 @@ Putting everything together covered so far, we have a final ECS-mapped event:
   },
   "client": {
     "ip": "192.168.86.222",
-    "port": 64734
+    "port": 54162
   },
   "server": {
     "ip": "192.168.86.1",
