@@ -46,7 +46,7 @@ If `labels` doesn't work for your use case, here's a few more tips to avoid conf
 ECS tries to model information by using the name of concepts,
 and avoids proper names such as tool names, project names or company names.
 By extension, nesting custom fields under a proper name is a relatively safe
-approach to adding custom fields. This is the approach taken by Filebeats modules,
+approach to adding custom fields. This is the approach taken by Filebeat modules,
 for example.
 
 As an example, an HTTP log from HAProxy will contain typical HTTP information,
