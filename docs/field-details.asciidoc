@@ -1,3 +1,5 @@
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-base]]
 === Base Fields
 
@@ -94,6 +96,8 @@ example: `["production", "env2"]`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-agent]]
 === Agent Fields
@@ -223,6 +227,8 @@ example: `6.0.0-rc2`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-as]]
 === Autonomous System Fields
 
@@ -288,6 +294,8 @@ Note also that the `as` fields are not expected to be used directly at the root 
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-client]]
 === Client Fields
@@ -556,6 +564,8 @@ example: `co.uk`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-cloud]]
 === Cloud Fields
 
@@ -740,6 +750,8 @@ example: `us-east-1`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-code_signature]]
 === Code Signature Fields
 
@@ -851,6 +863,8 @@ Note also that the `code_signature` fields are not expected to be used directly 
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-container]]
 === Container Fields
@@ -968,6 +982,8 @@ example: `docker`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-destination]]
 === Destination Fields
@@ -1234,6 +1250,8 @@ example: `co.uk`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-dll]]
 === DLL Fields
 
@@ -1330,6 +1348,8 @@ example: `C:\Windows\System32\kernel32.dll`
 
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-dns]]
 === DNS Fields
@@ -1676,6 +1696,8 @@ example: `answer`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-ecs]]
 === ECS Fields
 
@@ -1709,6 +1731,8 @@ example: `1.0.0`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-error]]
 === Error Fields
@@ -1817,6 +1841,8 @@ example: `java.lang.NullPointerException`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-event]]
 === Event Fields
@@ -2332,6 +2358,8 @@ example: `https://mysystem.example.com/alert/5271dedb-f5b0-4218-87f0-4ac4870a38f
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-file]]
 === File Fields
 
@@ -2764,6 +2792,8 @@ example: `1001`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-geo]]
 === Geo Fields
 
@@ -2926,6 +2956,8 @@ Note also that the `geo` fields are not expected to be used directly at the root
 
 
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-group]]
 === Group Fields
 
@@ -3001,6 +3033,8 @@ Note also that the `group` fields may be used directly at the root of the events
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-hash]]
 === Hash Fields
@@ -3093,6 +3127,8 @@ Note also that the `hash` fields are not expected to be used directly at the roo
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-host]]
 === Host Fields
@@ -3312,6 +3348,8 @@ example: `1325`
 
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-http]]
 === HTTP Fields
@@ -3567,6 +3605,8 @@ example: `1.1`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-interface]]
 === Interface Fields
 
@@ -3640,6 +3680,8 @@ Note also that the `interface` fields are not expected to be used directly at th
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-log]]
 === Log Fields
@@ -3892,6 +3934,8 @@ example: `Error`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-network]]
 === Network Fields
@@ -4171,6 +4215,8 @@ example: `ipv4`
 
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-observer]]
 === Observer Fields
@@ -4465,6 +4511,8 @@ type: keyword
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-organization]]
 === Organization Fields
 
@@ -4522,6 +4570,8 @@ Multi-fields:
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-os]]
 === Operating System Fields
@@ -4680,6 +4730,8 @@ Note also that the `os` fields are not expected to be used directly at the root 
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-package]]
 === Package Fields
@@ -4911,6 +4963,8 @@ example: `1.12.9`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-pe]]
 === PE Header Fields
 
@@ -5052,6 +5106,8 @@ Note also that the `pe` fields are not expected to be used directly at the root 
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-process]]
 === Process Fields
@@ -5435,6 +5491,8 @@ Note also that the `process` fields may be used directly at the root of the even
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-registry]]
 === Registry Fields
 
@@ -5576,6 +5634,8 @@ example: `Debugger`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-related]]
 === Related Fields
 
@@ -5671,6 +5731,8 @@ Note: this field should contain an array of values.
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-rule]]
 === Rule Fields
@@ -5854,6 +5916,8 @@ example: `1.1`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-server]]
 === Server Fields
@@ -6122,6 +6186,8 @@ example: `co.uk`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-service]]
 === Service Fields
 
@@ -6271,6 +6337,8 @@ example: `3.2.4`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-source]]
 === Source Fields
@@ -6537,6 +6605,8 @@ example: `co.uk`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-threat]]
 === Threat Fields
 
@@ -6753,6 +6823,8 @@ example: `https://attack.mitre.org/techniques/T1059/001/`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-tls]]
 === TLS Fields
@@ -7282,6 +7354,8 @@ example: `tls`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-tracing]]
 === Tracing Fields
 
@@ -7353,6 +7427,8 @@ example: `00f067aa0ba902b7`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-url]]
 === URL Fields
@@ -7644,6 +7720,8 @@ type: keyword
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-user]]
 === User Fields
 
@@ -7857,6 +7935,8 @@ Fields to describe the user relevant to the event.
 
 include::usage/user.asciidoc[]
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-user_agent]]
 === User agent Fields
 
@@ -7972,6 +8052,8 @@ example: `12.0`
 
 |=====
 
+// GENERATED FILE - Edit its template in scripts/templates instead
+
 [[ecs-vlan]]
 === VLAN Fields
 
@@ -8035,6 +8117,8 @@ Note also that the `vlan` fields are not expected to be used directly at the roo
 
 
 
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-vulnerability]]
 === Vulnerability Fields
@@ -8278,6 +8362,8 @@ example: `Critical`
 // ===============================================================
 
 |=====
+
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-x509]]
 === x509 Certificate Fields

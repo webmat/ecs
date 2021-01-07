@@ -1,3 +1,4 @@
+// GENERATED FILE - Edit its template in scripts/templates instead
 
 [[ecs-field-reference]]
 == {ecs} Field Reference
