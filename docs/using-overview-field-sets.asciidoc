@@ -1,0 +1,14 @@
+[[ecs-overview-field-sets]]
+=== Overview of {ecs} Field Sets
+
+Some ECS field sets are used to capture the main data in your events, while some
+others are meant to capture metadata such as where the event happened, which
+agent captured the data, etc.
+
+static data
+- categorization
+- data source (e.g. third party, not agent)
+
+
+
+

@@ -5116,6 +5116,10 @@ These fields contain information about a process.
 
 These fields can help you correlate metrics information with a process id/name from a log message.  The `process.pid` often stays in the metric itself and is copied to the global field for correlation.
 
+Find additional usage and examples in the process fields <<ecs-process-usage,usage>> section.
+
+
+
 [discrete]
 ==== Process Field Details
 
@@ -5490,6 +5494,10 @@ Note also that the `process` fields may be used directly at the root of the even
 
 
 |=====
+
+
+
+include::usage/process.asciidoc[]
 
 // GENERATED FILE - Edit its template in scripts/templates instead
 

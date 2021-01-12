@@ -1,0 +1,44 @@
+[[ecs-process-usage]]
+==== Usage
+
+Here are the subjects covered in this page.
+
+* <<ecs-process-usage-categorization>>
+
+[discrete]
+[[ecs-process-usage-categorization]]
+===== Categorization
+
+The `process` fields can be used to capture process activity per se (e.g. start /
+stop) or to capture metadata about a process that was mentioned via its PID in
+another kind of message (e.g. an authentication event).
+
+When the event is about the process activity itself, it must be categorized as
+such, by adding "process" to its `event.category` field. See also the documentation
+for the <<ecs-event-category-process>> event category.
+
+When the event is not about the process activity, and the process details were
+just added as metadata to the event, the `event.category` field should not include
+"process".
+
+[discrete]
+[[ecs-process-usage-ancestry]]
+===== Process Ancestry
+
+The `process` fields are also nested at `process.parent`, in order to allow capturing
+one level of process ancestry.
+
+// The following is not by design, it's simply that nobody's added it to ECS yet.
+// It may be useful to mention, but people may mistake this for a decision to not
+// support it officially, which it is not...
+//
+// If more levels of ancestry are needed, they should be captured as custom fields.
+// A common practice for multiple levels of ancestry is simply to capture all parent
+// PIDs as an array field.
+
+
+
+[discrete]
+[[ecs-process-usage-fields]]
+===== Process Fields
+
